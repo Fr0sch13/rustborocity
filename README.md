@@ -1,0 +1,2 @@
+# rustborocity
+Rustborocity.com is a Capstone project I came to when I was in the car with my girlfriend as we were driving home from the mountains talking about pokemon go. We found it weird we did not know of anything that allows for you to see the match ups for pokemon games in such an easy light. So I thought it would be the best thing to use data, machine learning, and wrap it all up in a website. 
