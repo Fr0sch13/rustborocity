@@ -1,0 +1,27 @@
+{
+  "name": "rustborocity",
+  "version": "1.0.0",
+  "description": "Rustborocity.com is a Capstone project I came to when I was in the car with my girlfriend as we were driving home from the mountains talking about pokemon go. We found it weird we did not know of anything that allows for you to see the match ups for pokemon games in such an easy light. So I thought it would be the best thing to use data, machine learning, and wrap it all up in a website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fr0sch13/rustborocity.git"
+  },
+  "keywords": [
+    "Data",
+    "Machine",
+    "Learning",
+    "Neo4j",
+    "Pokemon",
+    "Capstone"
+  ],
+  "author": "Dalton Crawford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fr0sch13/rustborocity/issues"
+  },
+  "homepage": "https://github.com/Fr0sch13/rustborocity#readme"
+}
