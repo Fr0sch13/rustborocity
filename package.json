@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/Fr0sch13/rustborocity/issues"
   },
-  "homepage": "https://github.com/Fr0sch13/rustborocity#readme"
+  "homepage": "https://github.com/Fr0sch13/rustborocity#readme",
+  "dependencies": {
+    "neo4j-driver": "^4.0.1"
+  }
 }
