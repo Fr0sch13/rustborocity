@@ -9,13 +9,13 @@ This builds the Neo4j Requirements to talk to the Database.
 var neo4j = require('neo4j-driver');
 
 var driver = neo4j.driver(
-    'neo4j://localhost',
-    neo4j.auth.basic('neo4j', 'neo4j')
+    'bolt://localhost:7687',
+    neo4j.auth.basic('webapp', 'qwer1234')
 )
 
 router.route("/Test").get(
     function(req,res){
-        const session = driver.session()
+        var session = driver.session()
 
         const resultPromise = session.writeTransaction(tx =>
             tx.run(
