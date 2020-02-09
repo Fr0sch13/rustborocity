@@ -4,7 +4,8 @@
   "description": "Rustborocity.com is a Capstone project I came to when I was in the car with my girlfriend as we were driving home from the mountains talking about pokemon go. We found it weird we did not know of anything that allows for you to see the match ups for pokemon games in such an easy light. So I thought it would be the best thing to use data, machine learning, and wrap it all up in a website.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,14 @@
   "homepage": "https://github.com/Fr0sch13/rustborocity#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "neo4j-driver": "^4.0.1"
+    "neo4j-driver": "^4.0.1",
+    "nodemon": "^2.0.2"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": 2500
   }
 }
