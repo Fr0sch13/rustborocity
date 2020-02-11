@@ -13,6 +13,8 @@ var driver = neo4j.driver(
     neo4j.auth.basic('webapp', 'qwer1234')
 )
 
+
+/*
 router.route("/Test").get(
     function(req,res){
         var session = driver.session()
@@ -89,8 +91,6 @@ router.route("/loadPokemon").get(
     }
 )
 
-
-/*
 Making Routes to load my data and get it ready to go
 router.route("/loadData").get(
     function(req,res){
