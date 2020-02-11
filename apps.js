@@ -9,6 +9,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 var router = require('./src/routes/routes');
 app.get('/', router);
 app.get('/Test', router);
+app.get('/clearDB', router);
+app.get('/loadPokemon', router);
+
 
 app.use(express.static(__dirname + "/public"));
 

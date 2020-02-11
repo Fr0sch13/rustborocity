@@ -36,6 +36,60 @@ router.route("/Test").get(
     }
 )
 
+router.route("/clearDB").get(
+    function(req,res){
+        var session = driver.session()
+
+        const resultPromise = session.writeTransaction(tx =>
+            tx.run(
+             'MATCH (n) optional match (n)-[r]-() DELETE n,r'   
+            )
+        )
+
+        resultPromise.then(result => {
+            session.close()
+
+            var clearMessage = 'The DB is now cleared, the property keys remain';
+            console.log(clearMessage);
+            driver.close()
+        })
+    }
+)
+
+router.route("/loadPokemon").get(
+    function(req,res){
+        var session = driver.session()
+        var firstTen = JSON.parse(fs.readFileSync("./src/jsonData/pokemon.json", "utf8"));
+        //console.log(firstTen);
+        var limit = 1;
+        var createString = "";
+        for(var i = 0; i < limit; i++){
+            var pokemon = firstTen[i];
+            var createString = createString + "CREATE (" + pokemon.name + " " +
+             JSON.stringify(firstTen[i]) + ")";
+           // console.log(createString);
+        }
+  
+        const resultPromise = session.writeTransaction( tx => 
+            tx.run(
+                createString
+            )
+        )
+
+        resultPromise.then(result => {
+            session.close()
+            const recordsAdded = result.records;
+            var loadTenMessage = "the following was added to the DB ";
+            for (var i = 0; i < recordsAdded.length(); i++){
+                console.log(loadTenMessage + recordsAdded[i]);
+            }
+            driver.close()
+        })
+
+    }
+)
+
+
 /*
 Making Routes to load my data and get it ready to go
 router.route("/loadData").get(
