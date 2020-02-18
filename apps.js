@@ -11,6 +11,7 @@ app.get('/', router);
 app.get('/Test', router);
 app.get('/clearDB', router);
 app.get('/loadPokemon', router);
+app.get('/csvConvert', router);
 
 
 app.use(express.static(__dirname + "/public"));

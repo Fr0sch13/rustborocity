@@ -3,6 +3,11 @@ var router = express.Router();
 var fs = require('fs');
 var databaseName = "test"
 
+//TensorFlow Import
+const tf = require('@tensorflow/tfjs');
+require('@tensorflow/tfjs-node');
+
+
 /*
 This builds the Neo4j Requirements to talk to the Database. 
 */
@@ -13,6 +18,24 @@ var driver = neo4j.driver(
     neo4j.auth.basic('webapp', 'qwer1234')
 )
 
+router.route("/testML").get(
+    function(req,res){
+        const model = tf.sequential();
+        model.add(tf.layers.dense({units: 100, activation: 'relu', inputShape: [10]}));
+        model.add(tf.layers.dense({units: 1, activation: 'linear'}));
+        model.compile({optimizer: 'sgd', loss: 'meanSquaredError'});
+
+        const xs = tf.randomNormal([100, 10]);
+        const ys = tf.randomNormal([100, 1]);
+
+            model.fit(xs, ys, {
+            epochs: 100,
+                callbacks: {
+                    onEpochEnd: (epoch, log) => console.log(`Epoch ${epoch}: loss = ${log.loss}`)
+                }
+            });
+    }
+)
 
 /*
 router.route("/Test").get(
