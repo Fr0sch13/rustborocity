@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-var databaseName = "test"
+var databaseName = "pokemon"
 
 /*
 This builds the Neo4j Requirements to talk to the Database. 
@@ -13,6 +13,13 @@ var driver = neo4j.driver(
     neo4j.auth.basic('webapp', 'qwer1234')
 )
 
+
+
+router.route("/home").get(
+    function(req,res){
+        
+    }
+)
 
 /*
 router.route("/Test").get(
@@ -100,11 +107,6 @@ router.route("/loadData").get(
     }
 )
 
-
-router.route("/csvConvert").get(
-    function(req,res){
-        var pokemonData = 
-    }
-)
 */
+
 module.exports = router;
