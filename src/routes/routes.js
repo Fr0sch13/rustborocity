@@ -13,11 +13,37 @@ var driver = neo4j.driver(
     neo4j.auth.basic('webapp', 'qwer1234')
 )
 
+/*
+/ route is landing page
+*/
+var menuOptions = [
+    {
+        name: "Home",
+        href: "/home"
+    },
+    {
+        name: "I Choose You",
+        href: "/pokemonPicker"
+    },    
+    {
+        name: "About",
+        href: "/about"
+    },
+    {
+        name: "Updates",
+        href: "/updates"
+    }
+
+];
 
 
-router.route("/home").get(
+
+router.route("/").get(
     function(req,res){
-        
+        var bannerIMG = "./public/pictures/testBanner.png"
+        var model = {
+            
+        }
     }
 )
 
