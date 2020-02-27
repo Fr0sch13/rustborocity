@@ -40,10 +40,17 @@ var menuOptions = [
 
 router.route("/").get(
     function(req,res){
-        var bannerIMG = "./public/pictures/testBanner.png"
+        var bannerIMG = "./public/pictures/testBanner.jpeg"
+        var bodyData = {
+            "img" : bannerIMG,
+            "paragraph" : "Sample Paragraph"
+        };
+        var getNav = req.app.get("getNav");
         var model = {
-            
+            menuOptions: getNav(),
+            bodyData: bodyData
         }
+        res.render("landing", model);
     }
 )
 

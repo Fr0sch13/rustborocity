@@ -5,8 +5,8 @@ html
         nav
             each option in menuOptions 
                 span(class=["borderColor", "textColor", "diveContent", "divColor"])
-                    if option.show
-                        a(href=option.href)= option.name
-    h1(class="SectionTitle")= "Welcome to Rustboro City!"
-
-      
+                    a(href=option.href)= option.name
+    body(class="body")
+        div
+            img(class="banner" src=bodyData.img)
+            p=bodyData.paragraph

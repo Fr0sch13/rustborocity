@@ -1,0 +1,150 @@
+.headerColor{
+    color: rgb(50, 166, 57); 
+}
+.borderColor {
+    -webkit-border-before-color: rgb(2, 48, 64);
+}
+.borderColor:hover {
+    border: 5px solid rgb(193, 253, 255);
+}
+.divColor {
+    background-color: rgb(244, 242, 240);
+}
+.textColor{
+    color: rgb(2, 115, 118);  
+}
+
+body{
+    background-image: url();
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: monospace;
+}
+
+.topcorner{
+    position:absolute;
+    top:0;
+    right:0;
+    width: 250px;
+    height: 69px;
+    align-content: center;
+    text-align: center;
+    border: 3px solid rgb(2, 115, 118);
+    border-radius: 4px;
+}
+
+img{
+    box-shadow: 10x;
+}
+
+/*
+webFinalColorPallet{
+   color: rgb(0, 103, 140);   
+   color: rgb(2, 48, 64);      
+   color: rgb(2, 115, 118);   
+   color: rgb(50, 166, 57);    
+   color: rgb(244, 242, 240);   
+
+}
+*/
+
+nav{
+    align-content: center;
+    text-align: center;
+}
+
+.avatar{
+    width: 150px;
+    height: 150px;
+    border: 3px solid rgb(244, 242, 240);
+    -webkit-text-fill-color-before: rgb(2, 115, 118);
+    transition: border 2s;
+    transition-delay: 0.5s;
+}
+.avatar.hover{
+    border: 5px solid rgb(2, 115, 118);
+    -webkit-text-fill-color-after: rgb(244, 242, 240);
+}
+
+.menuOption{
+    font-size: 15px;
+    color: rgb(2, 48, 64);
+    text-align: center;
+    margin: 10px;
+    padding: 3px;
+    border: solid, rgb(244, 242, 240), 1px;
+    background-color: rgb(244, 242, 240);
+    border-radius: 4px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.divContainer{
+    align-content: center;
+    width: 750px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.divContent{
+    text-align: center;
+    opacity: 0.7;
+    padding: 5px;
+    border-radius: 10px;
+    border: 5px solid;
+    transition: border 3s;
+    transition-delay: 1s;
+    margin: 20px;
+}
+
+.divContent:hover{
+    opacity: 0.9;
+}
+
+.contentBase{
+    border-radius: 10px;
+    font-size: 15px;
+    color:rgb(2, 115, 118);
+    margin-bottom:20px;
+    padding:20px;
+}
+
+.contentTitle{
+    font-size: 35px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    padding-top: 5px;
+}
+
+.sectionTitle{
+    font-size: 45px;
+    margin-bottom: 10px;
+    font-family: monospace;
+    opacity: 0.8;
+    width: 450px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+    color: rgb(244, 242, 240); 
+}
+
+.option{
+    font-size: 25px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.description{
+    font-size: 25px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
