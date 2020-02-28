@@ -40,6 +40,7 @@ var menuOptions = [
 
 router.route("/").get(
     function(req,res){
+       //var bannerIMG = 'C:/Users/Dalton/Documents/GitHub/rustborocity/public/pictures/testBanner.jpeg'
         var bannerIMG = 'https://fiverr-res.cloudinary.com/image/upload/t_message_attachment_large_thumb,q_auto,f_auto/v1/secured-attachments/message/attachments/03a078fd0b75d3d0216b78140bef690c-1582513677420/rustboroCity_logo_idea.png?__cld_token__=exp=1582853171~hmac=801cb1892d5cbdcfbb4f13e1fc61df373ca0e71408cc703354373220cf938dd9'
         var bodyData = {
             "img" : bannerIMG,
