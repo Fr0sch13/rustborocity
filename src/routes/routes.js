@@ -45,7 +45,7 @@ router.route("/").get(
                 var pokemonSpriteURL = "https://pokeapi.co/api/v2/" + name + "/";
                 var testCount = await hitThatDB(query);
                 var data = await getSprite(pokemonSpriteURL);
-                console.log(data + "/n");
+                console.log(data + "\n");
                 console.log(testCount.name + " in slash");
             }
             catch(err){
@@ -74,7 +74,7 @@ router.route("/").get(
 // )
 
 async function getSprite(URL) {
-    
+
 };
 
 async function hitThatDB(query){
