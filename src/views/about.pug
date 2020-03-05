@@ -1,0 +1,10 @@
+html
+    head
+        link(rel='stylesheet' , href='css/styles.css')
+        title= "Rustboro City"
+        nav
+            each option in menuOptions 
+                span(class=["borderColor", "textColor", "diveContent", "divColor"])
+                    a(href=option.href)= option.name
+    body(class="body")
+    
