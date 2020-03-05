@@ -1,9 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var fs = require('fs');
-var databaseName = "Pokemon"
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var req = new XMLHttpRequest();
 /*
 This builds the Neo4j Requirements to talk to the Database. 
 */
@@ -15,48 +11,61 @@ var driver = neo4j.driver(
 );
 
 /*
-/ route is landing page
+This is the Landing Page
 */
-var menuOptions = [
-    {
-        name: "Home",
-        href: "/home"
-    },
-    {
-        name: "I Choose You",
-        href: "/pokemonPicker"
-    },    
-    {
-        name: "About",
-        href: "/about"
-    },
-    {
-        name: "Updates",
-        href: "/updates"
-    }
-
-];
-
 router.route("/").get(
     function(req,res){
         (async function getData(){
             try{
-                var name = "Bulbasaur";
-                var name2 = "bulbasaur";
-                var query = "Match (n:Pokemon {name:\"" + name + "\"}) Return (n) LIMIT 1";
-                var pokemonSpriteURL = "https://pokeapi.co/api/v2/pokemon/" + name2 + "/";
-                var getMon = await hitThatDB(query);
-                var data = await getSprite(pokemonSpriteURL);
-                console.log(data + "\n");
-                console.log(getMon.name + " in slash");
+                var query = "Match (n:siteData {name:\"landing\"}) Return (n) LIMIT 1";
+                var paragraph = await hitThatDB(query);
+
             }
             catch(err){
                 console.log(err);
+            }
+            finally{
+                var getNav = req.app.get("getNav");
+                var model = {
+                    menuOptions: getNav(),
+                    laningData : paragraph
+                }
+                res.render("landing", model);
             }
         }());
     }
 );
 
+/*
+This is the about page
+*/
+router.route("/about").get(
+    function(req,res){
+        (async function getData(){
+            try{
+                var query = "Match (n:siteData {name:\"about\"}) Return (n) LIMIT 1";
+                var paragraph = await hitThatDB(query);
+                
+            }
+            catch(err){
+                console.log(err);
+            }
+            finally{
+
+                var getNav = req.app.get("getNav");
+                var model = {
+                    menuOptions: getNav(),
+                    aboutData: paragraph
+                }
+                res.render("about", model);
+            }
+        }());
+    }
+);
+
+/*
+This was a route to test pokemon retrevial from the DB
+*/
 router.route("/pokemon").get(
     function(req,res){
         (async function getData(){
@@ -85,15 +94,18 @@ router.route("/pokemon").get(
                     menuOptions: getNav(),
                     bodyData: bodyData
                 }
-                res.render("landing", model);
+                res.render("pokemon", model);
             }
         }());
     }
-)
+);
 
+/*
+This is my reusable function to query the database
+*/
 async function hitThatDB(query){
     const session = driver.session();
-    var returnObject = "";
+    var returnObject;
     return new Promise(resolve => {
         session.run(query)
         .then(result => {

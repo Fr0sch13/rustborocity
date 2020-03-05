@@ -24,9 +24,13 @@ function getNav(user) {
         "href": "/pokemonPicker"
       },
       {
-        "name": "pokemon",
-        "href": "/pokemon/:pokemon"
-      } 
+        "name": "About",
+        "href": "/about"
+      },
+      {
+        "name": "Updates",
+        "href": "/updates"
+      }
     ];
   }
   
