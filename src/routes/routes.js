@@ -70,8 +70,8 @@ router.route("/pokemon").get(
     function(req,res){
         (async function getData(){
             try{
-                var name = "Pikachu";
-                var query = "Match (n:Pokemon {name:\"" + name + "\"}) Return (n) LIMIT 1";
+                var name = "Squirtle";
+                var query = "Match (n:Pokemon {name:\"" + name + "\"}) Return (n)";
                 var getMon = await hitThatDB(query);
                 var dexNum = getMon.pokemon_id;
                 var pokemonSpriteURL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + dexNum + ".png";
@@ -94,7 +94,7 @@ router.route("/pokemon").get(
                     menuOptions: getNav(),
                     bodyData: bodyData
                 }
-                res.render("pokemon", model);
+                res.render("landing", model);
             }
         }());
     }
