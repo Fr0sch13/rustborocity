@@ -147,8 +147,8 @@ nav{
 .secret{
     margin: 15px;
     color: rgb(2, 48, 64);
-    background-color: rgb(2, 48, 64);
-    border-color: slategray;
+    background-color: rgb(180, 197, 205);
+    border-color: rgb(2, 48, 64);
     text-align: center;
     margin-left: 33%;
     margin-right: 33%;
