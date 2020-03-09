@@ -34,6 +34,31 @@ router.route("/").get(
     }
 );
 
+/*
+This is the about page
+*/
+router.route("/about").get(
+    function(req,res){
+        (async function getData(){
+            try{
+                var paragraph = [{"text" : "While on a stroll down to the Pokemon Trainer’s School, Professor Dalton and Profesora Andrea noticed the PokeNav was on all the trainer’s desk."}, {"text" : "Profesora Andrea: The PokeNav is really something amazing! That old man Mr. Stone did a good thing!"},{"text": "Professor Dalton looks at Profesora Andrea."},{"text": "Professor Dalton: It's weird they are still memorizing all the data about Pokemon when it can be stored and looked up easily on the PokeNav just like the other applications it supports."}, {"text": "Professor Dalton paused, he looked at Profesora Andrea and ran out the door to the Devon Corporation."}, {"text": "Profesora Andrea: HAHAHAHA"}, {"text": "Professor Dalton was out of breath as he gave his pitch to the President of Devon Corporation."}, {"text": "Mr. Stone: Since my youth, I've immersed myself in work. Consequently, I'm not familiar with trends and that sort of thing. We must make that happen at once!"},{"text": "We hope everyone who uses this application is as excited as Professor Dalton was when he thought of this."}];   
+            }
+            catch(err){
+                console.log(err);
+            }
+            finally{
+
+                var getNav = req.app.get("getNav");
+                var model = {
+                    menuOptions: getNav(),
+                    aboutData: paragraph
+                }
+                res.render("about", model);
+            }
+        }());
+    }
+);
+
 router.route("/pokemonPicker").get(
     function(req,res){
         var getNav = req.app.get("getNav");
@@ -167,34 +192,9 @@ router.route("/battle").post(
 )
 
 /*
-This is the about page
-*/
-router.route("/about").get(
-    function(req,res){
-        (async function getData(){
-            try{
-                var paragraph = [{"text" : "While on a stroll down to the Pokemon Trainer’s School, Professor Dalton and Profesora Andrea noticed the PokeNav was on all the trainer’s desk."}, {"text" : "Profesora Andrea: The PokeNav is really something amazing! That old man Mr. Stone did a good thing!"},{"text": "Professor Dalton looks at Profesora Andrea."},{"text": "Professor Dalton: It's weird they are still memorizing all the data about Pokemon when it can be stored and looked up easily on the PokeNav just like the other applications it supports."}, {"text": "Professor Dalton paused, he looked at Profesora Andrea and ran out the door to the Devon Corporation."}, {"text": "Profesora Andrea: HAHAHAHA"}, {"text": "Professor Dalton was out of breath as he gave his pitch to the President of Devon Corporation."}, {"text": "Mr. Stone: Since my youth, I've immersed myself in work. Consequently, I'm not familiar with trends and that sort of thing. We must make that happen at once!"},{"text": "We hope everyone who uses this application is as excited as Professor Dalton was when he thought of this."}];   
-            }
-            catch(err){
-                console.log(err);
-            }
-            finally{
-
-                var getNav = req.app.get("getNav");
-                var model = {
-                    menuOptions: getNav(),
-                    aboutData: paragraph
-                }
-                res.render("about", model);
-            }
-        }());
-    }
-);
-
-/*
 This was a route to test pokemon retrevial from the DB
 */
-router.route("/pokemon").get(
+router.route("/secret").get(
     function(req,res){
         (async function getData(){
             try{

@@ -10,7 +10,7 @@ var router = require('./src/routes/routes');
 app.get('/', router);
 app.get('/about', router);
 app.get('/pokemonPicker', router);
-app.get('/pokemon', router);
+app.get('/secret', router);
 app.post('/battle', router);
 
 function getNav(user) {
