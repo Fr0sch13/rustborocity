@@ -11,6 +11,7 @@ app.get('/', router);
 app.get('/home', router);
 app.get('/pokemonPicker', router);
 app.get('/pokemon', router);
+app.post('/battle', router);
 
 function getNav(user) {
   

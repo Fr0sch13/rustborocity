@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/Fr0sch13/rustborocity#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.17.1",
     "neo4j-driver": "^4.0.1",
     "nodemon": "^2.0.2",

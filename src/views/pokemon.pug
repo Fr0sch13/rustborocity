@@ -10,7 +10,8 @@ html
         div(class="divContainer")
             img(src=bodyData.img)
             h1(class="")= "#" + bodyData.paragraph.pokemon_id + " - " + bodyData.paragraph.name
-            h1(class="")= bodyData.relations
+            h1(class="")= bodyData.type1
+            h1(class="")= bodyData.type2
             div(class="divContainer")
                 h2(class="")= "Abilities: " + bodyData.ability
                 h2(class="")= "HP: " + bodyData.paragraph.hp
@@ -26,9 +27,5 @@ html
                     h3(class="")= "Base Egg Steps: " + bodyData.paragraph.base_egg_steps
                     h3(class="")= "Height: " + bodyData.paragraph.height + "m.  Weight: " + bodyData.paragraph.weight + "kg."
                     h3(class="")= "Male/Female Ratio: " + bodyData.paragraph.percentage_male + "/" + (100 - bodyData.paragraph.percentage_male).toFixed(1)
-                    
-
-
-                
-                
-            
+                    h3(class="")= bodyData.paragraph.name + " is " + bodyData.legendary + "!"
+                    h3(class="")= bodyData.paragraph.name + " is from Generation " + bodyData.generation + "!"          

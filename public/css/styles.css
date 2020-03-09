@@ -14,12 +14,18 @@
     color: rgb(2, 115, 118);  
 }
 
+@font-face{
+    font-family: 'pokemonclassic';
+    src: url('pokemonclassic.ttf');
+}
+
 body{
     background-image: url();
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: monospace;
+    font-family: 'pokemonclassic';
+    font-size: small;
 }
 
 .topcorner{
@@ -39,7 +45,7 @@ img{
 }
 
 /*
-webFinalColorPallet{
+ColorPallet{
    color: rgb(0, 103, 140);   
    color: rgb(2, 48, 64);      
    color: rgb(2, 115, 118);   
@@ -84,9 +90,18 @@ nav{
 
 .divContainer{
     align-content: center;
-    width: 750px;
     text-align: center;
     margin: 0 auto;
+}
+
+.one{
+    width: 38%;
+    float: left;
+    margin-left: 12.5%;
+}
+.two{
+    margin-right: 12.5%;
+    margin-left: 20%;
 }
 
 .divContent{
