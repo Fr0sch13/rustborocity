@@ -11,8 +11,17 @@
     background-color: rgb(244, 242, 240);
 }
 .textColor{
-    color: rgb(2, 115, 118);  
+    color: rgb(2, 48, 64); 
 }
+
+.mscolor{
+    color: rgb(2, 115, 118); 
+}
+
+.nameColor{
+    color: rgb(24, 57, 115);
+}
+
 
 @font-face{
     font-family: 'pokemonclassic';
@@ -20,12 +29,27 @@
 }
 
 body{
-    background-image: url();
+    background-color: rgb(2, 48, 64);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'pokemonclassic';
+}
+
+h1{
+    font-size: x-large;
+}
+
+h2{
+    font-size: medium;
+}
+
+.medium{
     font-size: small;
+}
+
+h3{
+    font-size: x-small;
 }
 
 .topcorner{
@@ -41,7 +65,17 @@ body{
 }
 
 img{
-    box-shadow: 10x;
+    box-shadow: 10px;
+}
+
+.pokemon{
+    height: 200px;
+    width: 200px;
+}
+
+.type{
+    height: 24px;
+    width: 64px;
 }
 
 /*
@@ -60,25 +94,12 @@ nav{
     text-align: center;
 }
 
-.avatar{
-    width: 150px;
-    height: 150px;
-    border: 3px solid rgb(244, 242, 240);
-    -webkit-text-fill-color-before: rgb(2, 115, 118);
-    transition: border 2s;
-    transition-delay: 0.5s;
-}
-.avatar.hover{
-    border: 5px solid rgb(2, 115, 118);
-    -webkit-text-fill-color-after: rgb(244, 242, 240);
-}
-
 .menuOption{
     font-size: 15px;
     color: rgb(2, 48, 64);
     text-align: center;
-    margin: 10px;
-    padding: 3px;
+    margin: 5px;
+    padding: 2px;
     border: solid, rgb(244, 242, 240), 1px;
     background-color: rgb(244, 242, 240);
     border-radius: 4px;
@@ -95,57 +116,36 @@ nav{
 }
 
 .one{
+    margin: 15px;
     width: 38%;
-    float: left;
-    margin-left: 12.5%;
+    display: inline-block;
+    color: rgb(148, 16, 16);
+    border: 10px solid;
+    background-color: rgb(180, 197, 205);
+    border-radius: 10px;
 }
 .two{
-    margin-right: 12.5%;
-    margin-left: 20%;
+    margin: 15px;
+    width: 38%;
+    display: inline-block;
+    color: rgb(148, 16, 16);
+    border: 10px solid;
+    background-color: rgb(180, 197, 205);
+    border-radius: 10px;
 }
 
 .divContent{
     text-align: center;
     opacity: 0.7;
-    padding: 5px;
     border-radius: 10px;
     border: 5px solid;
     transition: border 3s;
     transition-delay: 1s;
-    margin: 20px;
+    margin: 5px;
 }
 
 .divContent:hover{
     opacity: 0.9;
-}
-
-.contentBase{
-    border-radius: 10px;
-    font-size: 15px;
-    color:rgb(2, 115, 118);
-    margin-bottom:20px;
-    padding:20px;
-}
-
-.contentTitle{
-    font-size: 35px;
-    margin-bottom: 10px;
-    margin: 0 auto;
-    margin-bottom: 5px;
-    padding-top: 5px;
-}
-
-.sectionTitle{
-    font-size: 45px;
-    margin-bottom: 10px;
-    font-family: monospace;
-    opacity: 0.8;
-    width: 450px;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    text-align: center;
-    color: rgb(244, 242, 240); 
 }
 
 .option{
@@ -167,4 +167,32 @@ nav{
 .banner{
     width: 100%;
     height: 50%; 
+}
+
+.stats1 input[type="checkbox"]:checked + div{
+    opacity: 1;
+    height: auto;
+    overflow: hidden;
+    transition: opacity 1.5s linear, max-height 1.5s linear;
+}
+
+.hidden_stats{
+    opacity: 0;
+    border: none;
+}
+
+.stats2 input[type="checkbox"]:checked + div{
+    opacity: 1;
+    height: auto;
+    overflow: hidden;
+    transition: opacity 1.5s linear, max-height 1.5s linear;
+}
+
+.hidden_stats2{
+    opacity: 0;
+    border: none;
+}
+
+label:hover {
+    text-decoration: underline;
 }
