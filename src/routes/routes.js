@@ -258,7 +258,7 @@ router.route("/secret").get(
                     menuOptions: getNav(),
                     bodyData: bodyData
                 }
-                res.render("pokemon", model);
+                res.render("secret", model);
             }
         }());
     }
