@@ -6,4 +6,7 @@ html
             each option in menuOptions 
                 span(class=["menuOption","borderColor", "textColor", "divContent", "divColor"])
                     a(href=option.href)= option.name
-    body(class="body")
+    body(class="landingBG")
+        div(class="center")
+            each paragraph in aboutData
+                p(class="paragraph")=paragraph.text

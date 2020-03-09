@@ -6,15 +6,16 @@ html
             each option in menuOptions 
                 span(class=["menuOption","borderColor", "textColor", "divContent", "divColor"])
                     a(href=option.href)= option.name
-    body(class="body")
-        h1(class="sectionTitle")= "Pick The Contenders"
-        div(class="divContainer")
-            form(action="/battle",method="post",class="divContent")
-                div
-                    label="Pokemon One: "
-                    input(type="text",name="name")
-                div
-                    label="Pokemon Two: "
-                    input(type="text",name="name2")
-                div
-                    input(type="submit",value="Let's Go!")
+    body(class="landingBG")
+        div(class="")
+            div(class=["picker", "center", "middle"])
+                h1(class="")= "Pick The Contenders"
+                form(action="/battle",method="post")
+                    div
+                        label="Pokemon One: "
+                        input(type="text",name="name")
+                    div
+                        label="Pokemon Two: "
+                        input(type="text",name="name2")
+                    div(class="button")
+                        input(type="submit",value="Let's Go!")

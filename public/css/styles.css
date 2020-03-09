@@ -5,7 +5,7 @@
     -webkit-border-before-color: rgb(2, 48, 64);
 }
 .borderColor:hover {
-    border: 5px solid rgb(193, 253, 255);
+    border: 5px solid rgb(24, 57, 115);
 }
 .divColor {
     background-color: rgb(244, 242, 240);
@@ -105,10 +105,6 @@ nav{
     border-radius: 4px;
 }
 
-.bold{
-    font-weight: bold;
-}
-
 .divContainer{
     align-content: center;
     text-align: center;
@@ -119,10 +115,10 @@ nav{
     margin: 15px;
     width: 38%;
     display: inline-block;
-    color: slategray;
+    color: rgb(2, 48, 64);
     border: 10px solid;
     background-color: rgb(180, 197, 205);
-    border-radius: 10px;
+    border-radius: 7px;
     transition: border 3s;
     transition-delay: 1s;
 }
@@ -130,10 +126,10 @@ nav{
     margin: 15px;
     width: 38%;
     display: inline-block;
-    color: slategray;
+    color: rgb(2, 48, 64);
     border: 10px solid;
     background-color: rgb(180, 197, 205);
-    border-radius: 10px;
+    border-radius: 7px;
     transition: border 3s;
     transition-delay: 1s;
 }
@@ -149,6 +145,10 @@ nav{
 }
 
 .secret{
+    margin: 15px;
+    color: rgb(2, 48, 64);
+    background-color: rgb(2, 48, 64);
+    border-color: slategray;
     text-align: center;
     margin-left: 33%;
     margin-right: 33%;
@@ -201,6 +201,29 @@ nav{
     height: 75%; 
 }
 
+.middle{
+    margin: 25%, 33%, 25%;
+}
+
+.picker{
+    margin: 15px;
+    color: rgb(2, 48, 64);
+    background-color: rgb(180, 197, 205);
+    border-color: slategray;
+    text-align: center;
+    margin-left: 33%;
+    margin-right: 33%;
+    width: 34%;
+    border-radius: 7px;
+    border: 5px solid;
+    transition: border 3s;
+    transition-delay: 1s;
+}
+
+.button{
+    margin: 7px;
+}
+
 .landingBG{
     background-image: url('https://files.gamebanana.com/img/ss/maps/5d9640145f8a3.webp');
 }
@@ -227,8 +250,4 @@ nav{
 .hidden_stats2{
     opacity: 0;
     border: none;
-}
-
-label:hover {
-    text-decoration: underline;
 }

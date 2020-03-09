@@ -59,6 +59,28 @@ router.route("/about").get(
     }
 );
 
+router.route("/updates").get(
+    function(req,res){
+        (async function getData(){
+            try{
+                var paragraph = [{"text" : "Rustboro City is a work in the making. Here is the list of things we are hoping to add to this application."}, {"text":"We are looking to add Machine Learning to the Pokemon Picker so you can have a strong idea on if you will win your next battle."},{"text":"We will be adding move lists for Pokemon, Including Egg Moves, TM Lists, and Pokemon Move Effectiveness."}, {"text": "We are looking to include a trainer network.This will include: Trainer Accounts, Trainer Pokedex, Trainer Teams, Trainer Badge Cases, Trainer Z-Crystal Bag, and Trainer Technical Machine Tracker."}, {"text": "We will add the Pokemon Newly Discovered in the Galar Region."}, {"text": "We are going to add Dynamax, Gigantamax, Mega, and other special evolutions to the Pokemon Database."}, {"text": "We will be also adding features around Pokemon Go! Including all the base of the Original Rustboro City. As well as Pokemon Go specific features! Like Go Rocket Information, Pogo Stop Information, Gym Finder, New Locations, and a Buddy Book so you can track all of your best buddies."}, {"text": "So expect more from us here at Rustboro City and check back here for all the new stuff we are working on for you!"}];
+            }
+            catch(err){
+                console.log(err);
+            }
+            finally{
+
+                var getNav = req.app.get("getNav");
+                var model = {
+                    menuOptions: getNav(),
+                    aboutData: paragraph
+                }
+                res.render("updates", model);
+            }
+        }());  
+    }
+);
+
 router.route("/pokemonPicker").get(
     function(req,res){
         var getNav = req.app.get("getNav");
@@ -67,7 +89,7 @@ router.route("/pokemonPicker").get(
         }
         res.render("picker", model);
     }
-)
+);
 
 router.route("/battle").post(
     function(req,res){
@@ -189,7 +211,7 @@ router.route("/battle").post(
             }
         }());
     }
-)
+);
 
 /*
 This was a route to test pokemon retrevial from the DB
@@ -264,8 +286,6 @@ router.route("/secret").get(
     }
 );
 
-
-
 /*
 This is my reusable function to query the database
 */
@@ -288,6 +308,9 @@ async function hitThatDB(query){
     })
 };
 
+/*
+Reusable Function for getting all pokemon Data from nodes and relations
+*/
 async function hitThatDbForRelations(query){
     const session = driver.session();
     var returnObject = {"relations":[]};
