@@ -173,9 +173,7 @@ router.route("/about").get(
     function(req,res){
         (async function getData(){
             try{
-                var query = "Match (n:siteData {name:\"about\"}) Return (n) LIMIT 1";
-                var paragraph = await hitThatDB(query);
-                
+                var paragraph = [{"text" : "While on a stroll down to the Pokemon Trainer’s School, Professor Dalton and Profesora Andrea noticed the PokeNav was on all the trainer’s desk."}, {"text" : "Profesora Andrea: The PokeNav is really something amazing! That old man Mr. Stone did a good thing!"},{"text": "Professor Dalton looks at Profesora Andrea."},{"text": "Professor Dalton: It's weird they are still memorizing all the data about Pokemon when it can be stored and looked up easily on the PokeNav just like the other applications it supports."}, {"text": "Professor Dalton paused, he looked at Profesora Andrea and ran out the door to the Devon Corporation."}, {"text": "Profesora Andrea: HAHAHAHA"}, {"text": "Professor Dalton was out of breath as he gave his pitch to the President of Devon Corporation."}, {"text": "Mr. Stone: Since my youth, I've immersed myself in work. Consequently, I'm not familiar with trends and that sort of thing. We must make that happen at once!"},{"text": "We hope everyone who uses this application is as excited as Professor Dalton was when he thought of this."}];   
             }
             catch(err){
                 console.log(err);
@@ -200,7 +198,7 @@ router.route("/pokemon").get(
     function(req,res){
         (async function getData(){
             try{
-                var name = "Azumarill";
+                var name = "Marill";
                 var query = "Match (p:Pokemon {name:\"" + name + "\"})Return p";
                 var getMon = await hitThatDB(query);
                 
@@ -215,8 +213,8 @@ router.route("/pokemon").get(
 
                 var sprite = pokemonSpriteURL;
                 if(getRelations.relations.length > 2) {
-                    var type1 = getRelations.relations[0].HAS_A_TYPE_OF_0;
-                    var type2 = getRelations.relations[1].HAS_A_TYPE_OF_1;
+                    var type1 = "https://www.serebii.net/pokedex-bw/type/" + getRelations.relations[0].HAS_A_TYPE_OF_0 + ".gif";
+                    var type2 = "https://www.serebii.net/pokedex-bw/type/" + getRelations.relations[1].HAS_A_TYPE_OF_1 + ".gif";
                     if(getRelations.relations[2].IS_FROM){
                         var generation = getRelations.relations[2].IS_FROM;
                         var legendary = getRelations.relations[3].LEGENDARY_STATUS;
@@ -227,7 +225,7 @@ router.route("/pokemon").get(
                     }
                 }
                 else{
-                    var type1 = getRelations.relations[0].HAS_A_TYPE_OF_0;
+                    var type1 = "https://www.serebii.net/pokedex-bw/type/" + getRelations.relations[0].HAS_A_TYPE_OF_0 + ".gif";
                     if(getRelations.relations[1].IS_FROM){
                         var generation = getRelations.relations[1].IS_FROM;
                         var legendary = getRelations.relations[2].LEGENDARY_STATUS;

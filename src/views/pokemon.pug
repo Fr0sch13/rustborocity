@@ -7,25 +7,29 @@ html
                 span(class=["menuOption","borderColor", "textColor", "divContent", "divColor"])
                     a(href=option.href)= option.name
     body(class="body")
-        div(class="divContainer")
-            img(src=bodyData.img)
-            h1(class="")= "#" + bodyData.paragraph.pokemon_id + " - " + bodyData.paragraph.name
-            h1(class="")= bodyData.type1
-            h1(class="")= bodyData.type2
-            div(class="divContainer")
-                h2(class="")= "Abilities: " + bodyData.ability
-                h2(class="")= "HP: " + bodyData.paragraph.hp
-                h2(class="")= "Attack: " + bodyData.paragraph.attack
-                h2(class="")= "Defense: " + bodyData.paragraph.defense
-                h2(class="")= "Special Attack: " + bodyData.paragraph.sp_attack
-                h2(class="")= "Special Defense: " + bodyData.paragraph.sp_defense
-                h2(class="")= "Speed: " + bodyData.paragraph.speed
-                h2(class="")= "Base Stat Total: " + bodyData.paragraph.base_total
-                div(class="hidden_stats")= "More Stats"
-                    h3(class="")= "Capture Rate: " + bodyData.paragraph.capture_rate + "%"
-                    h3(class="")= "Base Happiness: " + bodyData.paragraph.base_happiness
-                    h3(class="")= "Base Egg Steps: " + bodyData.paragraph.base_egg_steps
-                    h3(class="")= "Height: " + bodyData.paragraph.height + "m.  Weight: " + bodyData.paragraph.weight + "kg."
-                    h3(class="")= "Male/Female Ratio: " + bodyData.paragraph.percentage_male + "/" + (100 - bodyData.paragraph.percentage_male).toFixed(1)
-                    h3(class="")= bodyData.paragraph.name + " is " + bodyData.legendary + "!"
-                    h3(class="")= bodyData.paragraph.name + " is from Generation " + bodyData.generation + "!"          
+        div(class=["divContainer", "one", "secret"])
+            img(src=bodyData.img class="pokemon")
+            div(class="")
+                img(src=bodyData.type1 class="type")
+                img(src=bodyData.type2 class="type")
+            h1(class="nameColor")= "#" + bodyData.paragraph.pokemon_id + " - " + bodyData.paragraph.name
+            div(class="")
+                h2(class="textColor")= "Abilities: " + bodyData.ability
+                h2(class="textColor")= "HP: " + bodyData.paragraph.hp
+                h2(class="textColor")= "Attack: " + bodyData.paragraph.attack
+                h2(class="textColor")= "Defense: " + bodyData.paragraph.defense
+                h2(class="textColor")= "Special Attack: " + bodyData.paragraph.sp_attack
+                h2(class="textColor")= "Special Defense: " + bodyData.paragraph.sp_defense
+                h2(class="textColor")= "Speed: " + bodyData.paragraph.speed
+                h2(class="textColor")= "Base Stat Total: " + bodyData.paragraph.base_total
+            div(class="stats1")
+                label(for="item-1" class=["medium", "msColor"])="More Stats"
+                input(type="checkbox" name="one" id="item-1")
+                div(class="hidden_stats")
+                    h3(class="msColor")= "Capture Rate: " + bodyData.paragraph.capture_rate + "%"
+                    h3(class="msColor")= "Base Happiness: " + bodyData.paragraph.base_happiness
+                    h3(class="msColor")= "Base Egg Steps: " + bodyData.paragraph.base_egg_steps
+                    h3(class="msColor")= "Height: " + bodyData.paragraph.height + "m.  Weight: " + bodyData.paragraph.weight + "kg."
+                    h3(class="msColor")= "Male/Female Ratio: " + bodyData.paragraph.percentage_male + "/" + (100 - bodyData.paragraph.percentage_male).toFixed(1)
+                    h3(class="msColor")= bodyData.paragraph.name + " is " + bodyData.legendary + "!"
+                    h3(class="msColor")= bodyData.paragraph.name + " is from Generation " + bodyData.generation + "!"          

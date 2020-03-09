@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 var router = require('./src/routes/routes');
 app.get('/', router);
-app.get('/home', router);
+app.get('/about', router);
 app.get('/pokemonPicker', router);
 app.get('/pokemon', router);
 app.post('/battle', router);
@@ -18,15 +18,15 @@ function getNav(user) {
     return [
       {
         "name": "Home",
-        "href": "/home"
+        "href": "/"
+      },      
+      {
+        "name": "About",
+        "href": "/about"
       },
       {
         "name": "Pokemon Picker",
         "href": "/pokemonPicker"
-      },
-      {
-        "name": "About",
-        "href": "/about"
       },
       {
         "name": "Updates",
