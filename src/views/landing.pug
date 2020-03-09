@@ -4,9 +4,9 @@ html
         title= "Rustboro City"
         nav
             each option in menuOptions 
-                span(class=["borderColor", "textColor", "diveContent", "divColor"])
+                span(class=["menuOption","borderColor", "textColor", "divContent", "divColor"])
                     a(href=option.href)= option.name
-    body(class="body")
-        div
-            img(src=bodyData.img)
-            p(class="paragraph")= bodyData.paragraph
+    body(class="landingBG")
+        div(class="center")
+            each paragraph in landingData
+                p(class="paragraph")=paragraph.text

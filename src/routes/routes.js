@@ -17,9 +17,7 @@ router.route("/").get(
     function(req,res){
         (async function getData(){
             try{
-                var query = "Match (n:siteData {name:\"landing\"}) Return (n) LIMIT 1";
-                var paragraph = await hitThatDB(query);
-
+                var paragraph = [{"text" :"Welcome to Rustboro City!"}, {"text" :"We are known as the Metropolis in western Hoenn. Home to the Devon Corp. and our Rock Type Specialist Gym Leader Roxanne!"}, {"text" :"Walking down the streets of Rustboro you will feel like you are in an old town, but honestly it is anything but!"},{"text":"Our cities slogan is: \“The city probing the integration of nature and science.\” "},{"text":"If you are feeling behind on anything trainer related you can always sit in on a class at the Pokemon Trainer’s School! Where the best little minds are learning how to be better in hopes to be the next generation of trainers, breeders, and maybe the next Pokemon League Champion!"}];
             }
             catch(err){
                 console.log(err);
@@ -27,7 +25,7 @@ router.route("/").get(
             finally{
                 var getNav = req.app.get("getNav");
                 var model = {
-                    menuOptions: getNav(),
+                    menuOptions : getNav(),
                     landingData : paragraph
                 }
                 res.render("landing", model);
