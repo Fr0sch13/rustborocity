@@ -29,7 +29,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.17.1",
     "neo4j-driver": "^4.3.3",
-    "nodemon": "^2.0.13",
+    "nodemon": "^2.0.20",
     "pug": "^2.0.4"
   },
   "nodemonConfig": {
